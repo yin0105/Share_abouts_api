@@ -1,0 +1,12 @@
+www:
+  type: python
+  config:
+    python_version: v2.7
+  systempackages:
+    - gdal-bin
+    - libgdal1-dev
+db:
+  type: postgis
+
+cache:
+  type: redis

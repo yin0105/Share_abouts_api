@@ -1,0 +1,36 @@
+# user-specific
+db/*.sqlite3
+log/*.log
+
+# tmp
+tmp/
+.sass-cache/
+profiling/
+attachments/
+build/
+
+# cover_me generated
+coverage
+coverage.data
+.coverage
+
+# junk
+.DS_Store
+*~
+*flymake.html
+*flymake.py
+
+# compiled files
+*.py[co]
+
+# environment
+env*/
+.env*
+
+# Local project settings
+src/project/local_settings.py
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
