@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='datasnapshotrequest',
             name='guid',
-            field=models.TextField(unique=True, blank=True, default=''),
+            field=models.CharField(unique=True, blank=True, default='', max_length=255),
         ),
         migrations.AlterField(
             model_name='datasnapshotrequest',

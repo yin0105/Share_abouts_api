@@ -1,4 +1,4 @@
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.http import HttpResponse
 from mock import patch
 from rest_framework import views, permissions
@@ -94,7 +94,7 @@ class DataSnapshotRequestListView (DataSnapshotMixin, OwnedResourceMixin, views.
     def initiate_data_request(self, characteristic_params):
         # Create a new data request
         datarequest = DataSnapshotRequest(**characteristic_params)
-        datarequest.requester = self.request.user if self.request.user.is_authenticated() else None
+        datarequest.requester = self.request.user if self.request.user.is_authenticated else None
         datarequest.status = 'pending'
         datarequest.save()
 

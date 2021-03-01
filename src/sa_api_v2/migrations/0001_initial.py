@@ -145,7 +145,7 @@ class Migration(migrations.Migration):
                 ('requested_at', models.DateTimeField(auto_now_add=True)),
                 ('status', models.TextField(default='', blank=True)),
                 ('fulfilled_at', models.DateTimeField(null=True)),
-                ('guid', models.TextField(default='', unique=True, blank=True)),
+                ('guid', models.CharField(max_length=128, default='', unique=True, blank=True)),
                 ('dataset', models.ForeignKey(on_delete=models.CASCADE, to='sa_api_v2.DataSet')),
                 ('requester', models.ForeignKey(on_delete=models.CASCADE, to=settings.AUTH_USER_MODEL, null=True)),
             ],

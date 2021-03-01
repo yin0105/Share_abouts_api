@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from django.contrib.auth.views import login
+from django.contrib.auth.views import LoginView
 from django.http import HttpResponse
 from . import views
 import rest_framework.urls

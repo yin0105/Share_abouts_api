@@ -6,7 +6,7 @@ from django.contrib import admin
 import django.contrib.auth.views
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import resolve_url
-import loginas.urls
+import loginas
 
 admin.autodiscover()
 
@@ -22,8 +22,8 @@ urlpatterns = [
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^admin/', include(loginas.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^admin/', include('loginas.urls')),
 
     # For now, use basic auth.
     url(r'^accounts/', include('django.contrib.auth.urls')),

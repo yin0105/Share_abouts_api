@@ -1,30 +1,30 @@
 from os import environ
 
-DEBUG = True
+DEBUG = False
 SHOW_DEBUG_TOOLBAR = DEBUG
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('a', 'a@example.com'),
 )
 
 MANAGERS = ADMINS
 
 USE_GEODB = (environ.get('USE_GEODB', 'True').lower() == 'true')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    'default': { 
+        'ENGINE': 'django.contrib.gis.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'. 
+        'NAME': 'shareabouts', # Or path to database file if using sqlite3. 
+        'USER': 'admin', # Not used with sqlite3. 
+        'PASSWORD': 'aaaaaaaa', # Not used with sqlite3. 
+        'HOST': 'shareabouts.cgkozbghz2qj.sa-east-1.rds.amazonaws.com', # Set to empty string for 
+        'PORT': '3306', # Set to empty string for default. Not used with sqlite3.
     }
 }
 
 ###############################################################################
 #
-# Server Configuration
+# Server Config
 #
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
@@ -124,7 +124,7 @@ MIDDLEWARE = [
     # 'toolbar_client_user.middleware.RemoteClientMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+   
     'django.contrib.messages.middleware.MessageMiddleware',
     # 'social.apps.django_app.middleware.SocialAuthExceptionMiddleware',
     # Uncomment the next line for simple clickjacking protection:
@@ -175,8 +175,8 @@ INSTALLED_APPS = (
     # that, comment out the old-style social app again. Note that exactly one of the
     # following lines should be uncommented at a time.
     #
-    # 'social.apps.django_app.default',  # <-- Just for migrations; replaced by social_django
-    'social_django',
+    'social.apps.django_app.default',  # <-- Just for migrations; replaced by social_django
+    # 'social_django',
 
     # CORS
     'corsheaders',
